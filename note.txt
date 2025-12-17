@@ -1,0 +1,187 @@
+=>Install Virtual Environment 
+     #Linux
+     sudo apt install python3-venv
+
+
+=> Create Virtual Environment
+     #Linux/macOS
+     python3 -m venv myenv              // you can use anyname whatever you want "myenv"
+
+     #Windows 
+     py -m venv myenv
+
+     => for activate
+          #Linux/macOS
+          source myenv/bin/activate // activate
+
+          #Windows
+          .\myenv\Scripts\activate      // activate
+          
+
+          pip3 list
+
+          deactivate
+          (myenv) administrator@administrator:~/Documents/class/pythonbathc1 $ deactivate 
+          administrator@administrator:~/Documents/class/pythonbathc1
+
+          pip3 list
+
+----------------------------------------------
+=> mysql module (v9.4.0)
+     https://pypi.org/project/mysql-connector-python/
+     
+     pip install mysql-connector-python
+
+     pip3 list
+----------------------------------------------
+= python dotenv (v  1.1.1)
+     (i) Install
+     https://pypi.org/project/python-dotenv/
+
+     pip install python-dotenv
+
+     pip3 list
+
+     create .env file
+
+     (ii) Create
+     create .env file
+
+     (iii) import
+          from dotenv import load_dotenv
+          import os
+
+          load_dotenv() 
+
+-----------------------------------------------------
+=> Telegram Bot (v 22.5)
+
+     https://python-telegram-bot.org/
+
+     pip install python-telegram-bot
+
+     pip3 list
+-----------------------------------------------------
+=> Get Telegram Token Key
+     (i) Google or Telegram app, find @BotFather
+          https://web.telegram.org/k/#@BotFather
+
+     (ii) Create a new bot
+          click start or send /start
+          Send /newbot
+
+               BotFather will ask for:
+                    Bot name for your bot = pybotl73
+                    Bot username = Must end with bot = pybot73bot
+     (iii) Copy your API Token
+               Done! Congratulations on your new bot. You will find it at t.me/Thorn4RBot. You can now add a description, about section and profile picture for your bot, see /help for a list of commands. By the way, when you've finished creating your cool bot, ping our Bot Support if you want a better username for it. Just make sure the bot is fully operational before you do this.
+
+               Use this token to access the HTTP API:
+               8305029910:AAHS6A32aZF4opr84u1jGTsZdS7NOLshhUY
+               Keep your token secure and store it safely, it can be used by anyone to control your bot.
+
+               For a description of the Bot API, see this page: https://core.telegram.org/bots/api
+
+
+          =>Simple code
+               from telegram import Update
+               from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+
+
+               async def hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+               await update.message.reply_text(f'Hello {update.effective_user.first_name}')
+
+
+               app = ApplicationBuilder().token("YOUR TOKEN HERE").build()
+
+               app.add_handler(CommandHandler("hello", hello))
+
+               app.run_polling()
+
+
+-----------------------------------------------------
+https://firebase.google.com
+
+Click to Go to console > Get started >  Create a new Firebase project 
+Project Name = Python B1 Project
+Click Continue
+
+
+Enable Gemini in Firebase  = unchecked
+Click Continue
+
+Enable Google Analytics for this project = Uncheck 
+Click Create Project > Continue  > Continue
+
+
+
+----------------------------------------------
+
+
+=> Register An App For Web 
+
+
+  => Config API key for Firebase SDK Code ( Software Development Kit)
+
+    Click "Project overview" > Project settings > General > click "web icon" 
+
+    Register app > App nickname = attformapp
+                  Also set up Firebase Hosting for this app = uncheck
+                  click "Register app" > click "Continue to console"
+
+
+----------------------------------------------
+
+  => Create Database 
+    Build > Firestore Database > Create Database 
+     (i) Select edition > Standard edition > click "Next"
+     (ii) Database ID & location
+            Database ID = (default)
+            Location = asia-southeast1 (Singapore)  > click "Next"
+    (iii) Configure > Start in production mode > click "Create"
+
+
+  => Error for writing (PERMISSION_DENIED)
+    Build > Firestore Database > Rules > allow read, write: if true; > click "Publish"
+  
+
+--------------------------------------------------------------------------------------------
+=> firebase module (v9.4.0)
+     https://firebase.google.com/docs/firestore/quickstart#python
+     https://pypi.org/project/firebase-admin/
+     
+     pip install firebase-admin
+
+     pip3 list
+
+     (i) how to get Firebase Serice Account as json file
+          Go to Firease Console > Open your Firebase Project > Project Overview > Project settings > Service accounts > choose Python > click Generate new private key > click Generate key
+          after download > "serviceAccountKey.json"
+
+          
+----------------------------------------------
+=> Mongodb Driver (v 4.15.5)
+
+     https://www.mongodb.com/ > Resources > MongoDB Drivers > Python > PyMongo or "Get started with MongoDB Python" > Connect (Synchronous)
+     https://www.mongodb.com/docs/languages/python/pymongo-driver/current/get-started/
+     
+     https://pypi.org/project/pymongo/
+
+     pip install pymongo
+
+     pip3 list
+
+----------------------------------------------------------------------------------
+Deploy to server (render.com)
+https://dashboard.render.com/
+     (i) Prepare your project
+          method 1 (manually)
+               create requirements.txt
+               activate > pip list > copy all dependencies and past to requirements.txt
+
+          method 2 (auto)
+               we don't need to create requirements.txt
+               activate
+               pip freeze > requirements.txt
+     
+     (ii) Upload to github
