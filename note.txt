@@ -181,7 +181,30 @@ https://dashboard.render.com/
 
           method 2 (auto)
                we don't need to create requirements.txt
+               activate, pip frereze, copy to requirements.txt
+
+               {{-- 
                activate
                pip freeze > requirements.txt
+               --}}
      
      (ii) Upload to github
+
+     (iii) Render (Click New - Web Service)
+          Source Code = your repo
+          Name = pythonmongotgbot
+          ProjectOptional = No project / No Environment
+          Language = Python3
+          Branch = main
+          Region = Singapore (Southeast Asia)
+          Root Directory Optional = e.g src
+          Build Command = pip install -r requirements.txt
+          Start Command = python3 bot.py
+          
+          Environment Variables
+          TELEGRAM_TOKEN = "8305029910:AAHS6A32aZF4opr84u1jGTsZdS7NOLshhUY"
+          MONGO_URI = mongodb+srv://administrator:Admin123@cluster0.5yebdvl.mongodb.net/
+
+          Click = "Deploy Web Service"
+
+---------------------------------------------------------------------------------------------------------
