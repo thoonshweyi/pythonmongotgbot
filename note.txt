@@ -208,3 +208,19 @@ https://dashboard.render.com/
           Click = "Deploy Web Service"
 
 ---------------------------------------------------------------------------------------------------------
+=> Atlas IP Error 
+Atlas Dashboard >Datbase & Network Access > IP Access List
+
+ipv4 = 127.0.0.1 subnet
+0.0.0.0 (any) CRUD
+
+pool
+192.168.1.1
+192.168.1.254
+
+OSI 7 Layer
+
+Layer 2 = Switch (Smart Switch) - Can  Manage internet speed for each port on switch by gui or command code
+Layer 3 = Router - ip distribute - 192.168.1.1 for router login page
+
+255.255.255.0 - subnet for ip length range
